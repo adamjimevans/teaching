@@ -1,0 +1,46 @@
+#report writer 1.0
+def report_writer(name, grade, target, comment, feedback):
+  print("This term we have been studying blah towards the MYP certificate. " + name + " has achieved a grade " + grade + " in our assessments which shows " + comment + " progress towards their target of " + target + ". Going forward they should focus on " + feedback)
+
+report_writer("Joe", "5", "4", "good", "waking up")
+
+#report writer 2.0
+def report_writer_2(name, grade, target, comment, feedback):
+  print("This term we have been studying blah towards the MYP certificate. " + name + " has achieved a grade " + str(grade) + " in our assessments which shows " + comment + " progress towards their target of " + str(target) + ". Going forward they should focus on " + feedback)
+
+name = "Jim"
+grade = 2
+target = 4
+feedback = "do something"
+
+if grade == 0:
+  comment = "a lack of"
+elif grade > target:
+  comment = "excellent"
+elif grade == target:
+  comment = "sound"
+else:
+  comment = "some"
+
+report_writer_2(name, grade, target, comment, feedback)
+
+#report writer 3.0
+names = ["Sebastian", "Shanay", "Macy", "Bradley","Zac", "Freya", "Ffion", "Krystal", "Eadie", "Natalie", "Lily", "Florence", "Callum", "Anastasia", "Amy", "Olivia", "Sophie", "Anais", "Rose", "Leighla", "Leonardo", "Emily", "Morgan", "Scarlett", "Robert", "Jorja"]
+
+grades = [7.5, 5, 4, 4, 4.5, 2, 3,5, 4, 4, 7.5, 1.5, 5, 4, 6, 2.5, 4.5, 0, 1.5, 6.5, 3, 8.5, 4, 0, 4, 4, 5]
+
+targets = [6, 4, 5, 5, 6, 3, 4, 4, 5, 6, 5, 5, 5, 4, 5, 5, 5, 4, 5, 4, 6, 7, 5, 4, 5, 5]
+
+zipped_grades = zip(names, grades)
+zipped_targets = zip(grades, targets)
+grades_to_targets = {key:value for key, value in zipped_targets}
+names_to_grades = {key:value for key, value in zipped_grades}
+
+class_records = {"Sebastian":{"Grade": 7.5, "Target": 6, "Comment": "excellent"}, "Shanay": {"Grade": 5, "Target": 4, "Comment": "excellent"}, "Macy": {"Grade": 4, "Target": 5, "Comment": "some"}, "Bradley": {"Grade": 4, "Target": 5, "Comment": "some"}, "Zac": {"Grade": 4.5, "Target": 6, "Comment": "some"}, "Freya": {"Grade": 2, "Target": 3, "Comment": "some"}, "Ffion": {"Grade": 3, "Target": 4, "Comment": "some"}, "Krystal": {"Grade": 5, "Target": 4, "Comment": "Excellent"}, "Eadie":{"Grade": 3.5, "Target": 5, "Comment": "some"}}
+
+for name, record in class_records.items():
+  print("For our MYP studies this term we have been studying blah. " + name + " has achieved a grade " + str(record["Grade"]) + " making " + record["Comment"] + " progress towards their target of " + str(record["Target"]) )
+
+
+#for i in names:
+  #print("For our MYP we have been studying blah. " + i + " has achieved a grade " + str(names_to_grades.get(i)))
